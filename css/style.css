@@ -48,6 +48,11 @@ header > h1 {
 
 }
 
+h1 a{
+  text-decoration: none;
+  color: #212020;
+}
+
 
 ._3D_Text {
   /*color: #fff;*/
@@ -69,10 +74,6 @@ header > h1 {
     0 20px 20px rgba(0,0,0,.15);
 }
 
-h1 a{
-  text-decoration: none;
-  color: #212020;
-}
 
 .nav_item{
   padding-bottom: 5px;
@@ -141,6 +142,7 @@ footer{
 
   min-height: 30px;
   background-color: #ffffff;
+  /*background-color: #A6D8D4;*/
   color: #212020;
   padding: 15px;
 
@@ -265,6 +267,9 @@ footer li{
 }
 .about > p{
   margin-top: 10px;
+  margin-right: 2%;
+  margin-left: 2%;
+  padding: 2%;
   /*text-align: left;*/
   line-height: 1.25;
   font-size: 20px;
@@ -295,11 +300,15 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 
 }
 
+
+
+
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
+
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
@@ -314,10 +323,41 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner,
-.flip-card:focus .flip-card-inner {
+.flip-card:hover .flip-card-inner{
+  -webkit-transform:rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
   transform: rotateY(180deg);
+  visibiliy: visible;
 }
+ /*.flip-card:active .flip-card-inner,*/
+
+/*.flip-card:active .flip-card-inner{*/
+  /*-webkit-transform:rotate(180deg);*/
+  /*-moz-transform: rotate(180deg);*/
+  /*-ms-transform: rotate(180deg);*/
+  /*-o-transform: rotate(180deg);*/
+  /*transform: rotateY(180deg);*/
+  /*!*border: 5px solid blue;*!*/
+  /*!*visibiliy: visible;*!*/
+
+/*}*/
+/*.flip-card[open]:not(:focus-within)*/
+.flip-card:focus::after .flip-card-inner {
+  -webkit-transform:rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotateY(180deg);
+  outline: 5px solid blue;
+
+
+}
+/*.flip-card-inner:active {*/
+    /*visibiliy: visible;*/
+
+/*}*/
 
 /* Position the front and back side */
 .flip-card-front, .flip-card-back {
@@ -358,38 +398,195 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 
 .gallery{
 
-  min-height: 600px;
+  /*min-height: 600px;*/
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content:stretch;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 40px ;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 50px;
 
-}
-
-.gallery > img{
-  border: 10px #50C7C7 solid;
-  margin: 10px;
-  width: 300px;
 
 }
+
+/*.gallery > img{*/
+  /*!*border: 10px #50C7C7 solid;*!*/
+  /*!*margin: 10px;*!*/
+  /*width: 300px;*/
+  /*height: 200px;*/
+  /*margin: 0 auto;*/
+
+/*}*/
+
+@-webkit-keyframes swing{
+  /*0% {*/
+       /*transform: rotate(3deg);*/
+     /*}*/
+  /*100% {*/
+      /*transform: rotate(-3deg);*/
+    /*}*/
+   0% {transform: scale(1);}
+   10%, 20% {transform: scale(0.9) rotate(-3deg);}
+   30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);}
+   40%, 60%, 80% {transform: scale(1.1) rotate(-3deg);}
+   100% {transform: scale(1) rotate(0);}
+}
+
+@keyframes swing{
+  /*0% {*/
+       /*transform: rotate(3deg);*/
+     /*}*/
+  /*100% {*/
+      /*transform: rotate(-3deg);*/
+    /*}*/
+   0% {
+     transform: scale(1);
+   }
+   10%, 20% {
+     transform: scale(0.9) rotate(-3deg);
+   }
+   30%, 50%, 70%, 90% {
+     transform: scale(1.1) rotate(3deg);
+   }
+   40%, 60%, 80% {
+     transform: scale(1.1) rotate(-3deg);
+   }
+   100% {
+     transform: scale(1) rotate(0);
+   }
+}
+
+
+
+.project_card {
+  -webkit-animation:swing;
+  animation: swing ease-in-out 3s;
+
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  /*!*list-style: none;*!*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+
+  /*border: 1px solid black;*/
+    /*creates curved edges*/
+  border-radius: 25px;
+
+  /*width: 100px;*/
+  /*padding: 1%;*/
+
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+
+  box-sizing: content-box;
+  font-family: inherit; /* use same font as parent*/
+  font-size: 16px;
+  /*font-weight: bolder;*/
+  overflow: hidden;
+  /*background-color: #B9CDDA;*/
+  background-color: #FFFFFF;
+
+}
+.project_card img{
+  /*object-fit: fill;*/
+  /*min-height: 100%;*/
+  /*width:auto ;*/
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+
+  /*background-position: center center;*/
+  /*background-repeat: no-repeat;*/
+  /*background-size: cover;*/
+  /*border-top-left-radius: 0.25rem;*/
+  /*border-top-right-radius: 0.25rem;*/
+  /*position:relative;*/
+
+
+}
+.project_card h1{
+  text-align: center;
+  padding-top:5px;
+  padding-bottom: 5px;
+  font-size: 25px;
+
+}
+.project_card button{
+  width: 50%;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 7px;
+  /*background: #6B7D7D;*/
+  background: #ffffff;
+
+  overflow: hidden;
+  /*below centers the button and leaves space towards bottom*/
+  display: block;
+  margin: auto auto 15px auto;
+}
+.project_card button:hover{
+  background: #000000;
+}
+.project_card button a{
+  font-family:'Roboto Condensed', sans-serif;
+  text-align: center;
+  color: #000000;
+  background-color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.project_card p {
+  text-align: left;
+  padding: 15px;
+}
+
+.project_card:hover {
+  -ms-transform: scale(1.25); /* IE 9 */
+  -webkit-transform: scale(1.25); /* Safari 3-8 */
+  transform: scale(1.25);
+  border: 2px solid black;
+  z-index: 0;
+}
+
+
+
+  /*margin: 12px;*/
+  /*background: #fff;*/
+  /*border-radius: 7px;*/
+  /*padding: 0 0 50px 0;*/
+
+
+  /*flex-basis: 400px;*/
+
+  /*display: flex;*/
+  /*flex-direction: column;*/
+
+  /*flex: 0 0 400px;*/
+
+/*}*/
 
 
 /*contact form style sheet*/
 
 fieldset{
-   border-radius: 10px;
+  border-radius: 10px;
   font-size: 18px;
   font-weight: bold;
 }
 legend{
   text-align: center;
-  font-size: 40px;
+  font-size: 50px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 fieldset div{
    border: 2px solid black;
    margin: 2%;
-   padding: 1%;
+   padding: 3%;
    border-radius: 5px;
 }
 
@@ -397,6 +594,8 @@ fieldset div{
   display: grid;
   grid-row-gap: 10px;
   grid-template-columns: 1fr;
+  overflow: auto;
+  /*adds a scroll bar as needed */
 
 }
 
@@ -406,17 +605,22 @@ fieldset div{
 }
 
 input[type=reset], input[type=submit] {
-   border: 1px solid black;
-   width: 100px;
-   padding: 2%;
+  border: 1px solid black;
+    /*creates curved edges*/
+  border-radius: 25px;
 
-   -webkit-box-sizing: content-box;
-   -moz-box-sizing: content-box;
-   box-sizing: content-box;
-  font-family: inherit;
-  font-size: 14px;
+  width: 100px;
+  padding: 1%;
+
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+
+  box-sizing: content-box;
+  font-family: inherit; /* use same font as parent*/
+  font-size: 16px;
   font-weight: bolder;
 }
+
 input, textarea, select{
    background-color:#FFFFFF;
   font-size: 14px;
@@ -428,7 +632,9 @@ input, textarea, select{
 h1 a:hover, h1 a:focus,
 footer a:hover,
 footer a:focus,
-input:focus, input:hover{
+input:focus, input:hover
+.project_card button:focus,.project_card button:hover,
+.project_card button a:focus,.project_card button a:hover{
   /*color: #CCCCCC;*/
     /*color: #CBB26A;*/
   color: #F5F5F5;
@@ -438,7 +644,20 @@ input:focus, input:hover{
   -webkit-text-decoration-style: dotted;
           text-decoration-style: dotted;
 }
+/**:focus{*/
+  /*color: #F5F5F5;*/
+  /*background: #212020;*/
+  /*!*text-decoration: underline;*!*/
 
+  /*-webkit-text-decoratio
+
+
+
+
+  n-style: dotted;*/
+          /*text-decoration-style: dotted;*/
+
+/*}*/
 
 
 @media screen and (min-width: 680px){
@@ -484,14 +703,45 @@ input:focus, input:hover{
     font-size: 50px
 
   }
-  /*make 2 columns because now can fit both on screen without looking squished */
+  .about > h1 {
+    font-size: 55px;
+
+  }
+  .skills h2{
+  font-size: 55px;
+  }
+  .about > p {
+    font-size: 22px;
+  }
+  .gallery{
+    grid-template-columns: 1fr 1fr;
+  }
+  .project_card {
+  max-width: 500px;
+
+  }
+
+  legend{
+  font-size: 55px;
+  padding-bottom: 5px;
+  }
+
+  /*make 2 columns because now can fit both on screen without looking squished
+  also change grid-gap so there is space between field columns and rows*/
   .contact_form{
     grid-template-columns: auto 1fr;
+    grid-gap: 20px;
 
 }
   .form_buttons{
     grid-column: 1/-1;
   }
+
+  fieldset div{
+   margin: 3%;
+   padding: 3%;
+  }
+
   input[type=reset], input[type=submit] {
     width: 120px;
 
@@ -529,13 +779,49 @@ input:focus, input:hover{
     font-size: 60px
 
   }
+  .about > h1 {
+    font-size: 60px;
+
+  }
+  .about > p {
+    margin-right: 12%;
+    margin-left: 12%;
+    font-size: 25px;
+  }
+  .skills h2{
+  font-size: 60px;
+  }
+
+
+  .gallery{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  /*.project_card {*/
+    /*max-width: 500px;*/
+
+  /*}*/
+
+  legend{
+    font-size: 60px;
+  }
+  fieldset{
+    font-size: 22px;
+  }
+
+  fieldset div{
+    margin: 4%;
+    padding: 3%;
+  }
+  input, textarea, select{
+    font-size: 16px;
+  }
 
 
 }
 @media screen and (prefers-reduced-motion: reduce) {
-  /*#logo {*/
-    /*animation: none;*/
-  /*}*/
+  .project_card {
+    animation: none;
+  }
 }
 
   /*.about, .clients, .method-image, .contact-image{*/

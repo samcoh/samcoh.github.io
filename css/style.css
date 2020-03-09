@@ -409,6 +409,12 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 
 
 }
+.gallery h1{
+  grid-column: 1/-1;
+  text-align: center;
+  font-size: 50px;
+
+}
 
 /*.gallery > img{*/
   /*!*border: 10px #50C7C7 solid;*!*/
@@ -478,6 +484,7 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
+  /*background-origin: content-box;*/
 
   box-sizing: content-box;
   font-family: inherit; /* use same font as parent*/
@@ -493,10 +500,12 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
   /*min-height: 100%;*/
   /*width:auto ;*/
   background-size: contain;
+  /*background-size: cover;*/
   background-position: center;
   background-repeat: no-repeat;
-  height: 100%;
   width: 100%;
+  height:auto;
+  /*height: 50%;*/
 
   /*background-position: center center;*/
   /*background-repeat: no-repeat;*/
@@ -507,11 +516,36 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 
 
 }
+/*.project_card:hover{*/
+  /*!*object-fit: fill;*!*/
+  /*!*min-height: 100%;*!*/
+  /*!*width:auto ;*!*/
+  /*background-size: contain;*/
+  /*!*background-size: fit;*!*/
+  /*background-position: center;*/
+  /*background-repeat: no-repeat;*/
+  /*background-size: contain;*/
+  /*width: 100%;*/
+  /*height: auto;*/
+  /*!*height: 50%;*!*/
+
+  /*!*background-position: center center;*!*/
+  /*!*background-repeat: no-repeat;*!*/
+  /*!*background-size: cover;*!*/
+  /*!*border-top-left-radius: 0.25rem;*!*/
+  /*!*border-top-right-radius: 0.25rem;*!*/
+  /*!*position:relative;*!*/
+
+/*}*/
+.content{
+  margin: auto 0;
+}
 .project_card h1{
   text-align: center;
-  padding-top:5px;
-  padding-bottom: 5px;
+  padding: 5px;
+  /*padding-bottom: 2px;*/
   font-size: 25px;
+
 
 }
 .project_card button{
@@ -527,9 +561,7 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
   display: block;
   margin: auto auto 15px auto;
 }
-.project_card button:hover{
-  background: #000000;
-}
+
 .project_card button a{
   font-family:'Roboto Condensed', sans-serif;
   text-align: center;
@@ -542,6 +574,12 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 .project_card p {
   text-align: left;
   padding: 15px;
+}
+
+.project_card button:hover,
+.project_card button a:hover{
+  background: #000000;
+  color: #ffffff;
 }
 
 .project_card:hover {
@@ -632,9 +670,17 @@ input, textarea, select{
 h1 a:hover, h1 a:focus,
 footer a:hover,
 footer a:focus,
-input:focus, input:hover
-.project_card button:focus,.project_card button:hover,
-.project_card button a:focus,.project_card button a:hover{
+input:focus, input:hover,
+.project_card:focus,
+/*.project_card button:hover,*/
+/*,*/
+/*.project_card button a:hover*/
+.project_card button:focus,
+/*.project_card button:hover,*/
+.project_card button a:focus
+/*,*/
+/*.project_card button a:hover*/
+{
   /*color: #CCCCCC;*/
     /*color: #CBB26A;*/
   color: #F5F5F5;
@@ -720,6 +766,11 @@ input:focus, input:hover
   max-width: 500px;
 
   }
+  .project_card p {
+  text-align: center;
+  padding: 15px;
+  }
+
 
   legend{
   font-size: 55px;

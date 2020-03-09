@@ -545,11 +545,11 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 }
 
 .project_card:hover {
-  -ms-transform: scale(1.25); /* IE 9 */
-  -webkit-transform: scale(1.25); /* Safari 3-8 */
-  transform: scale(1.25);
+  /*-ms-transform: scale(1.25); !* IE 9 *!*/
+  /*-webkit-transform: scale(1.25); !* Safari 3-8 *!*/
+  /*transform: scale(1.25);*/
   border: 2px solid black;
-  z-index: 0;
+  /*z-index: 0;*/
 }
 
 

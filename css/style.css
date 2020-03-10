@@ -537,9 +537,9 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
   /*!*position:relative;*!*/
 
 /*}*/
-.content{
-  margin: auto 0;
-}
+/*.content{*/
+  /*margin: auto 0;*/
+/*}*/
 .project_card h1{
   text-align: center;
   padding: 5px;
@@ -588,6 +588,39 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
   /*transform: scale(1.25);*/
   border: 2px solid black;
   /*z-index: 0;*/
+}
+.resume{
+
+}
+.resume h1{
+  margin: auto 0;
+  text-align: center;
+  font-size: 50px;
+}
+
+/*.iframe-container {*/
+  /*overflow: hidden;*/
+  /*padding-top: 56.25%;*/
+  /*position: relative;*/
+/*}*/
+
+/*.iframe-container iframe {*/
+ /*border: 0;*/
+   /*height: 100%;*/
+   /*left: 0;*/
+   /*position: absolute;*/
+   /*top: 0;*/
+   /*width: 100%;*/
+/*}*/
+
+
+
+iframe{
+  padding-top: 10px;
+  margin: auto 0;
+  width: 100%;
+  min-height:800px;
+  overflow: hidden;
 }
 
 

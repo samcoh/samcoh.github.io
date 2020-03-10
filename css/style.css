@@ -540,12 +540,11 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 /*.content{*/
   /*margin: auto 0;*/
 /*}*/
-.project_card h1{
+.gallery .project_card h1{
   text-align: center;
   padding: 5px;
   /*padding-bottom: 2px;*/
   font-size: 25px;
-
 
 }
 .project_card button{
@@ -560,6 +559,7 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
   /*below centers the button and leaves space towards bottom*/
   display: block;
   margin: auto auto 15px auto;
+
 }
 
 .project_card button a{
@@ -582,13 +582,17 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
   color: #ffffff;
 }
 
-.project_card:hover {
+.project_card:hover, .project_card:focus{
   /*-ms-transform: scale(1.25); !* IE 9 *!*/
   /*-webkit-transform: scale(1.25); !* Safari 3-8 *!*/
   /*transform: scale(1.25);*/
   border: 2px solid black;
+  filter: drop-shadow(16px 16px 10px black)
   /*z-index: 0;*/
 }
+
+
+
 .resume{
 
 }

@@ -72,9 +72,38 @@ h1 a{
     0 5px 10px rgba(0,0,0,.25),
     0 10px 10px rgba(0,0,0,.2),
     0 20px 20px rgba(0,0,0,.15);
+
+  letter-spacing: 3px;
 }
 
+/*.dottedText:after*/
+/*{*/
+    /*content: '';*/
+    /*position:absolute;*/
+    /*left:0;*/
+    /*top:0;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background: radial-gradient(circle, transparent 50%, transparent 50%),*/
+    /*radial-gradient(circle, transparent 20%, white 50%) 30px 30px;*/
+    /*background-size:4px 4px;*/
+/*}*/
 
+ /*svg{*/
+        /*width:1450px;*/
+        /*height:300;*/
+        /*viewBox:0 0 1500 300;*/
+
+    /*}*/
+    /*text{*/
+      /*font-family:'Lucida Grande', sans-serif;*/
+      /*font-size:152px;*/
+      /*stroke:#000ece;*/
+      /*stroke-width:3px;*/
+      /*stroke-linecap:round;*/
+      /*stroke-dasharray:1,1;*/
+      /*fill:none;*/
+    /*}*/
 .nav_item{
   padding-bottom: 5px;
   font-size: 20px;
@@ -89,6 +118,7 @@ h1 a{
 
 
 }
+/*font-family: 'Codystar', cursive;*/
 .active{
   /*border: 2px solid black;*/
   text-decoration:  underline dotted black;
@@ -264,6 +294,10 @@ footer li{
   /*align-content: center;*/
   font-size: 50px;
 
+  /*font-size: 60px;*/
+  /*font-family: 'Codystar', cursive;*/
+
+
 }
 .about > p{
   margin-top: 10px;
@@ -298,6 +332,7 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
   margin-left: auto;
   margin-right: auto;
 
+
 }
 
 
@@ -315,7 +350,7 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 
 .flip-card-inner h1,
 .flip-card-inner p,
-.flip-card-inner p a {
+.flip-card-inner a {
   margin: 25px;
   text-align: center;
   color: #ffffff;
@@ -323,7 +358,8 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner{
+.flip-card:hover .flip-card-inner,
+.flip-card:focus .flip-card-inner{
   -webkit-transform:rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
@@ -344,16 +380,16 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 
 /*}*/
 /*.flip-card[open]:not(:focus-within)*/
-.flip-card:focus::after .flip-card-inner {
-  -webkit-transform:rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotateY(180deg);
-  outline: 5px solid blue;
+/*.flip-card:focus::after .flip-card-inner */
+/*.flip-card:focus .flip-card-inner {*/
+  /*-webkit-transform:rotate(180deg);*/
+  /*-moz-transform: rotate(180deg);*/
+  /*-ms-transform: rotate(180deg);*/
+  /*-o-transform: rotate(180deg);*/
+  /*transform: rotateY(180deg);*/
 
 
-}
+/*}*/
 /*.flip-card-inner:active {*/
     /*visibiliy: visible;*/
 
@@ -561,14 +597,17 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
   margin: auto auto 15px auto;
 
 }
+.project_card a{
+   text-decoration: none;
 
-.project_card button a{
+}
+
+.project_card a button{
   font-family:'Roboto Condensed', sans-serif;
   text-align: center;
   color: #000000;
   background-color: #ffffff;
   font-size: 18px;
-  text-decoration: none;
 }
 
 .project_card p {
@@ -576,13 +615,13 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
   padding: 15px;
 }
 
-.project_card button:hover,
-.project_card button a:hover{
-  background: #000000;
-  color: #ffffff;
-}
+/*.project_card button:hover{*/
+  /*background: #000000;*/
+  /*color: #ffffff;*/
+/*}*/
 
-.project_card:hover, .project_card:focus{
+.project_card:hover,
+.project_card:focus{
   /*-ms-transform: scale(1.25); !* IE 9 *!*/
   /*-webkit-transform: scale(1.25); !* Safari 3-8 *!*/
   /*transform: scale(1.25);*/
@@ -657,12 +696,32 @@ legend{
   font-size: 50px;
   padding-top: 10px;
   padding-bottom: 20px;
+
+
 }
+.contact_pictures{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.contact_pictures img{
+  height: 50px;
+  width: 50px;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
 fieldset div{
    border: 2px solid black;
    margin: 2%;
    padding: 3%;
    border-radius: 5px;
+
 }
 
 .contact_form{
@@ -701,23 +760,18 @@ input, textarea, select{
   font-size: 14px;
 }
 
+.flip-card-inner .flip-card-back a:focus,
+.flip-card-inner .flip-card-back a:hover{
+  color: #212020;
+  background: #F5F5F5;
+}
 
 .nav_item a:hover,
 .nav_item a:focus,
 h1 a:hover, h1 a:focus,
-footer a:hover,
-footer a:focus,
+footer a:hover, footer a:focus,
 input:focus, input:hover,
-.project_card:focus,
-/*.project_card button:hover,*/
-/*,*/
-/*.project_card button a:hover*/
-.project_card button:focus,
-/*.project_card button:hover,*/
-.project_card button a:focus
-/*,*/
-/*.project_card button a:hover*/
-{
+.project_card a button:focus, .project_card a button:hover{
   /*color: #CCCCCC;*/
     /*color: #CBB26A;*/
   color: #F5F5F5;
@@ -814,6 +868,17 @@ input:focus, input:hover,
   padding-bottom: 5px;
   }
 
+  .contact_pictures{
+    margin: 5px;
+    padding-top: 10px;
+  }
+
+  .contact_pictures img{
+    height: 60px;
+    width: 60px;
+  }
+
+
   /*make 2 columns because now can fit both on screen without looking squished
   also change grid-gap so there is space between field columns and rows*/
   .contact_form{
@@ -892,6 +957,16 @@ input:focus, input:hover,
   legend{
     font-size: 60px;
   }
+
+  .contact_pictures{
+    padding-top: 25px;
+  }
+
+  .contact_pictures img{
+    height: 70px;
+    width: 70px;
+  }
+
   fieldset{
     font-size: 22px;
   }

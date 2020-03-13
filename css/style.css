@@ -22,7 +22,7 @@ header{
   /*margin: 20px;*/
 
   /*border-bottom: 2px solid #CBB26A;*/
-  border-bottom: 4px solid #212020;
+  border-bottom: 5px solid #212020;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -148,14 +148,6 @@ a.skip:focus{
 
 .container{
   min-height: 700px;
-  /*display: grid;*/
-  /*grid-template-columns: repeat(4,auto);*/
-  /*grid-template-rows: repeat(4,auto);*/
-  /*grid-column-gap: 15px;*/
-  /*grid-row-gap: 15px;*/
-  /*width: 100vw;*/
-  /*height: 100vh;*/
-  /*background-image: url("../images/data.jpg");*/
   padding-top: 20px;
   margin: 20px;
 }
@@ -163,9 +155,6 @@ a.skip:focus{
 footer{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
-  justify-content: space-evenly;
-  align-content: center;
 
   position: relative;
   left:0;
@@ -256,6 +245,65 @@ footer li{
 
 }
 
+/* Animation */
+/*@-webkit-keyframes typewriter {*/
+  /*0% {*/
+    /*width: 0;*/
+  /*}*/
+  /*99.9% {*/
+    /*border-right: .15em solid orange;*/
+  /*}*/
+  /*100% {*/
+    /*border: none;*/
+
+  /*}*/
+/*}*/
+
+/*@-webkit-keyframes blinkTextCursor{*/
+  /*from {border-right-color: rgba(255,255,255,.75);}*/
+  /*to{border-right-color: transparent;}*/
+
+/*}*/
+
+@keyframes typewriter {
+  from{
+    width: 0;
+  }
+  to{
+    width: 100%;
+  }
+
+}
+@-webkit-keyframes typewriter {
+  from{
+    width: 0;
+  }
+  to{
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from {
+    border-right: .15em solid black;
+  }
+  to{
+    border-right: transparent;
+  }
+}
+@-webkit-keyframes blink {
+  from {
+    border-right: .15em solid black;
+  }
+  to{
+    border-right: transparent;
+  }
+}
+/*@keyframes blinkTextCursor{*/
+  /*from{border-right-color: rgba(255,255,255,.75);}*/
+  /*to{border-right-color: transparent;}*/
+/*}*/
+
 
 /*.intro{*/
   /*grid-column: 1/ -1;*/
@@ -265,27 +313,36 @@ footer li{
   /*!*justify-self: center;*!*/
 
 /*}*/
+/*.typewriter_animation{*/
+  /*animation: typewriter 4s steps(44) 1s 1 normal both,*/
+             /*blinkTextCursor 500ms steps(44) infinite normal;*/
+
+/*}*/
 
 
-.landing{
+.landing > h1{
+   -webkit-animation: typewriter 2s steps(20, end),
+                      blink .5s step-end infinite alternate;
+  animation: typewriter 2s steps(20, end),
+             blink .5s step-end infinite alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  border-right: .15em solid black;
+
   position: absolute;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 50%;
-  /*height: 100%;*/
-  width: 100%;
-  /*position: fixed;*/
-  left: 0;
-  font-size: 45px;
-  line-height: 1.5;
 
-  /*vertical-align: middle;*/
-}
-.about{
-  /*background-image: url("../images/about_image.jpg");*/
-  /*margin: 0px;*/
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  height: 45px;
+  font-size: 45px;
+  white-space: nowrap;
+  overflow: hidden;
+
+  letter-spacing: .15em;
 
 }
 .about > h1 {
@@ -295,7 +352,6 @@ footer li{
   text-align: center;
   /*align-content: center;*/
   font-size: 50px;
-
   /*font-size: 60px;*/
   /*font-family: 'Codystar', cursive;*/
 
@@ -587,7 +643,7 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 }
 .project_card button{
   width: 50%;
-  height: 30px;
+  max-height: 30px;
   border: 1px solid black;
   border-radius: 7px;
   /*background: #6B7D7D;*/
@@ -762,8 +818,8 @@ input, textarea, select{
   font-size: 14px;
 }
 
-.flip-card-inner .flip-card-back a:focus,
-.flip-card-inner .flip-card-back a:hover{
+.flip-card-back a:focus,
+.flip-card-back a:hover{
   color: #212020;
   background: #F5F5F5;
 }
@@ -985,6 +1041,9 @@ input:focus, input:hover,
 }
 @media screen and (prefers-reduced-motion: reduce) {
   .project_card {
+    animation: none;
+  }
+  .landing > h1{
     animation: none;
   }
 }

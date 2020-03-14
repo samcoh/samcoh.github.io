@@ -338,33 +338,7 @@ https://www.w3schools.com/howto/howto_css_flip_card.asp*/
   transform: rotateY(180deg);
   visibiliy: visible;
 }
- /*.flip-card:active .flip-card-inner,*/
 
-/*.flip-card:active .flip-card-inner{*/
-  /*-webkit-transform:rotate(180deg);*/
-  /*-moz-transform: rotate(180deg);*/
-  /*-ms-transform: rotate(180deg);*/
-  /*-o-transform: rotate(180deg);*/
-  /*transform: rotateY(180deg);*/
-  /*!*border: 5px solid blue;*!*/
-  /*!*visibiliy: visible;*!*/
-
-/*}*/
-/*.flip-card[open]:not(:focus-within)*/
-/*.flip-card:focus::after .flip-card-inner */
-/*.flip-card:focus .flip-card-inner {*/
-  /*-webkit-transform:rotate(180deg);*/
-  /*-moz-transform: rotate(180deg);*/
-  /*-ms-transform: rotate(180deg);*/
-  /*-o-transform: rotate(180deg);*/
-  /*transform: rotateY(180deg);*/
-
-
-/*}*/
-/*.flip-card-inner:active {*/
-    /*visibiliy: visible;*/
-
-/*}*/
 
 /* Position the front and back side */
 .flip-card-front, .flip-card-back {
@@ -481,22 +455,8 @@ div.figure p.caption {
 
 }
 
-/*.gallery > img{*/
-  /*!*border: 10px #50C7C7 solid;*!*/
-  /*!*margin: 10px;*!*/
-  /*width: 300px;*/
-  /*height: 200px;*/
-  /*margin: 0 auto;*/
-
-/*}*/
 
 @-webkit-keyframes swing{
-  /*0% {*/
-       /*transform: rotate(3deg);*/
-     /*}*/
-  /*100% {*/
-      /*transform: rotate(-3deg);*/
-    /*}*/
    0% {transform: scale(1);}
    10%, 20% {transform: scale(0.9) rotate(-3deg);}
    30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);}
@@ -505,12 +465,6 @@ div.figure p.caption {
 }
 
 @keyframes swing{
-  /*0% {*/
-       /*transform: rotate(3deg);*/
-     /*}*/
-  /*100% {*/
-      /*transform: rotate(-3deg);*/
-    /*}*/
    0% {
      transform: scale(1);
    }
@@ -533,30 +487,16 @@ div.figure p.caption {
 .project_card {
   -webkit-animation:swing;
   animation: swing ease-in-out 3s;
-
-  /*display: flex;*/
-  /*flex-wrap: wrap;*/
-  /*!*list-style: none;*!*/
-  /*justify-content: center;*/
-  /*align-items: center;*/
-
-  /*border: 1px solid black;*/
-    /*creates curved edges*/
   border-radius: 25px;
-
-  /*width: 100px;*/
-  /*padding: 1%;*/
 
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
-  /*background-origin: content-box;*/
 
   box-sizing: content-box;
-  font-family: inherit; /* use same font as parent*/
+  font-family: inherit;
   font-size: 16px;
-  /*font-weight: bolder;*/
+
   overflow: hidden;
-  /*background-color: #B9CDDA;*/
   background-color: #FFFFFF;
 
 }
@@ -644,10 +584,6 @@ div.figure p.caption {
   padding: 15px;
 }
 
-/*.project_card button:hover{*/
-  /*background: #000000;*/
-  /*color: #ffffff;*/
-/*}*/
 
 .project_card:hover,
 .project_card:focus{

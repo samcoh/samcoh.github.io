@@ -566,12 +566,12 @@ div.figure p.caption {
   margin: auto auto 15px auto;
 
 }
-.project_card a{
-   text-decoration: none;
+/*.project_card a{*/
+   /*text-decoration: none;*/
 
-}
+/*}*/
 
-.project_card a button{
+.project_card button{
   font-family:'Roboto Condensed', sans-serif;
   text-align: center;
   color: #000000;
@@ -732,7 +732,7 @@ input, textarea, select{
 h1 a:hover, h1 a:focus,
 footer a:hover, footer a:focus,
 input:focus, input:hover,
-.project_card a button:focus, .project_card a button:hover,
+.project_card button:focus, .project_card button:hover,
 .download-button:hover,
 .download-button:focus{
   /*color: #CCCCCC;*/
